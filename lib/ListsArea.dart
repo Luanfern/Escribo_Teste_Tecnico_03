@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:starwars_escribo/Provider/Pages.dart';
 
 class ListsArea extends StatefulWidget {
   const ListsArea({ Key? key }) : super(key: key);
@@ -10,8 +12,7 @@ class ListsArea extends StatefulWidget {
 class _ListsAreaState extends State<ListsArea> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    final GerenciamentodePaginas pages = Provider.of(context);
+    return pages.getpage;
   }
 }

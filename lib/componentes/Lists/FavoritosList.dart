@@ -11,7 +11,9 @@ class _ListFavoritosState extends State<ListFavoritos> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child:const Center(
+        child: Text('Lista de Favoritos'),
+      ),
     );
   }
 }

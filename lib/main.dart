@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:starwars_escribo/Home.dart';
+import 'package:starwars_escribo/Provider/Pages.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -16,9 +18,14 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (ctx) => GerenciamentodePaginas()),
+        ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Home(),
+      ),
     );
   }
 }

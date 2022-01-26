@@ -11,7 +11,9 @@ class _ListFilmesState extends State<ListFilmes> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child:const Center(
+        child: Text('Lista de Filmes'),
+      ),
     );
   }
 }

@@ -11,7 +11,9 @@ class _ListPersonagensState extends State<ListPersonagens> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child:const Center(
+        child: Text('Lista de Personagens'),
+      ),
     );
   }
 }
