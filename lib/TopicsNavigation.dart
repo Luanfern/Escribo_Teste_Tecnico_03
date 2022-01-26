@@ -22,6 +22,7 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
       child: Row(
         children: [
          Expanded(
+           flex: 3,
             child: GestureDetector(
               onTap: (){
                 print("filmes");
@@ -29,12 +30,10 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
               },
               child: Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Color.fromARGB(255, 255, 255, 255),
+                decoration:  BoxDecoration(
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 255, 255, 255),
                       width: 2,
-                    ),
                   ),
                 ),
                 child: const Center(
@@ -51,6 +50,7 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
             ),
           ),
           Expanded(
+            flex: 3,
             child: GestureDetector(
               onTap: (){
                 print("pers");
@@ -58,12 +58,10 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
               },
               child: Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Color.fromARGB(255, 255, 255, 255),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 255, 255, 255),
                       width: 2,
-                    ),
                   ),
                 ),
                 child: const Center(
@@ -80,6 +78,7 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
             ),
           ),
           Expanded(
+            flex: 3,
             child:GestureDetector(
               onTap: (){
                 print("fav");
@@ -87,12 +86,10 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
               },
               child: Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Color.fromARGB(255, 255, 255, 255),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 255, 255, 255),
                       width: 2,
-                    ),
                   ),
                 ),
                 child: const Center(

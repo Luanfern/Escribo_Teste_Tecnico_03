@@ -33,7 +33,9 @@ class _HomeState extends State<Home> {
               ],
             ),
             const TopicsNavigation(),
-            const ListsArea(),
+            const Expanded(
+              child: ListsArea(),
+            ),
           ],
         ),
       ),

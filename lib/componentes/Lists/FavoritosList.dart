@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starwars_escribo/componentes/Lists/Componentes%20-%20Lista/Filme.dart';
 
 class ListFavoritos extends StatefulWidget {
   const ListFavoritos({ Key? key }) : super(key: key);
@@ -10,10 +11,10 @@ class ListFavoritos extends StatefulWidget {
 class _ListFavoritosState extends State<ListFavoritos> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child:const Center(
-        child: Text('Lista de Favoritos'),
-      ),
-    );
+     return ListView.builder(
+        itemCount: 1,
+        itemBuilder: (ctx, i) {
+          return const Filme();
+        });
   }
 }
