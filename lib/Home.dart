@@ -34,12 +34,14 @@ class _HomeState extends State<Home> {
                       width: 150,
                       funcao: () {
                         if (telas.getsiteoficial == false) {
+                          telas.getavatar == true ? telas.setavatar(false): null;
                           telas.settela(
                             const Expanded(
                               child: SiteOficial(),
                             ),
                           );
                           telas.setsiteoficial(true);
+                          
                         } else {
                           telas.settela(
                             const Expanded(

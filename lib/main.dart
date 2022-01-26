@@ -5,6 +5,8 @@ import 'package:starwars_escribo/Home.dart';
 import 'package:starwars_escribo/Provider/Pages.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
 
+import 'Provider/Avatar.dart';
+
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -23,10 +25,15 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (ctx) => GerenciamentodePaginas()),
           ChangeNotifierProvider(create: (ctx) => GerenciamentodeTelas()),
+          ChangeNotifierProvider(create: (ctx) => GerenciamentodeAvatar()),
         ],
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeData(
+        primaryColor: const Color.fromARGB(255, 255, 255, 255),
+        brightness: Brightness.dark,
+      ),
         debugShowCheckedModeBanner: false,
-        home: Home(),
+        home: const Home(),
       ),
     );
   }

@@ -32,6 +32,8 @@ dependencies:
   provider: ^6.0.2
   flutter_inappwebview: ^5.3.2
   url_launcher: ^6.0.18
+  fluttermoji: ^0.2.3
+  flutter_colorpicker: ^1.0.3
 
 
   # The following adds the Cupertino Icons font to your application.
