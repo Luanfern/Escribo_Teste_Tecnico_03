@@ -17,8 +17,8 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
   Widget build(BuildContext context) {
     final GerenciamentodePaginas pages = Provider.of(context);
     return Container(
-      margin: const EdgeInsets.only(top: 20),
-      height: 30,
+      margin: const EdgeInsets.only(left: 5, right: 5),
+      height: 35,
       child: Row(
         children: [
          Expanded(
@@ -31,8 +31,9 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
               child: Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
                 decoration:  BoxDecoration(
+                  color: Colors.black,
                   border: Border.all(
-                      color: const Color.fromARGB(255, 255, 255, 255),
+                      color: const Color.fromARGB(255, 59, 59, 59),
                       width: 2,
                   ),
                 ),
@@ -42,7 +43,7 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 214, 213, 213),
                     ),
                   ),
                 ),
@@ -56,11 +57,12 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
                 print("pers");
                 pages.setpage(const ListPersonagens());
               },
-              child: Container(
+              child:Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                decoration: BoxDecoration(
+                decoration:  BoxDecoration(
+                  color: Colors.black,
                   border: Border.all(
-                      color: const Color.fromARGB(255, 255, 255, 255),
+                      color: const Color.fromARGB(255, 59, 59, 59),
                       width: 2,
                   ),
                 ),
@@ -70,7 +72,7 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 214, 213, 213),
                     ),
                   ),
                 ),
@@ -84,11 +86,12 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
                 print("fav");
                 pages.setpage(const ListFavoritos());
               },
-              child: Container(
+              child:Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                decoration: BoxDecoration(
+                decoration:  BoxDecoration(
+                  color: Colors.black,
                   border: Border.all(
-                      color: const Color.fromARGB(255, 255, 255, 255),
+                      color: const Color.fromARGB(255, 59, 59, 59),
                       width: 2,
                   ),
                 ),
@@ -98,7 +101,7 @@ class _TopicsNavigationState extends State<TopicsNavigation> {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 214, 213, 213),
                     ),
                   ),
                 ),

@@ -13,6 +13,8 @@ class _ListsAreaState extends State<ListsArea> {
   @override
   Widget build(BuildContext context) {
     final GerenciamentodePaginas pages = Provider.of(context);
-    return pages.getpage;
+    return Container(
+      margin: const EdgeInsets.only(top: 8, left: 8, right: 8),
+      child: pages.getpage);
   }
 }

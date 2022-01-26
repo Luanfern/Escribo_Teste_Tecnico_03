@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../Variaveis.dart';
 
 class GerenciamentodePaginas with ChangeNotifier {
+  
   Widget get getpage{
     return page;
   }

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:starwars_escribo/Home.dart';
 import 'package:starwars_escribo/Provider/Pages.dart';
+import 'package:starwars_escribo/Provider/Telas.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (ctx) => GerenciamentodePaginas()),
+          ChangeNotifierProvider(create: (ctx) => GerenciamentodeTelas()),
         ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

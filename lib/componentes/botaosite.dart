@@ -5,7 +5,8 @@ class BtnSite extends StatefulWidget {
   final String link;
   final double width;
   final double height;
-  const BtnSite({Key? key, required this.title, required this.link, required this.width, required this.height})
+  final Function funcao;
+  const BtnSite({Key? key, required this.title, required this.link, required this.width, required this.height, required this.funcao})
       : super(key: key);
 
   @override
@@ -15,24 +16,29 @@ class BtnSite extends StatefulWidget {
 class _BtnSiteState extends State<BtnSite> {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: BtnSitePainter(
-        shadow: const Shadow(blurRadius: 5),
-        clipper: BtnShape(),
-      ),
-      child: ClipPath(
-        clipper: BtnShape(),
-        child: Container(
-          color: const Color.fromARGB(255, 54, 54, 54),
-          width: widget.width,
-          height: widget.height,
-          child: Center(
-            child: Text(
-              widget.title,
-              style: const TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+    return GestureDetector(
+      onTap: (){
+        widget.funcao();
+      },
+      child: CustomPaint(
+        painter: BtnSitePainter(
+          shadow: const Shadow(blurRadius: 2),
+          clipper: BtnShape(),
+        ),
+        child: ClipPath(
+          clipper: BtnShape(),
+          child: Container(
+            color: const Color.fromARGB(255, 0, 0, 0),
+            width: widget.width,
+            height: widget.height,
+            child: Center(
+              child: Text(
+                widget.title,
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
@@ -70,6 +76,7 @@ class BtnSitePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = shadow.toPaint();
+    paint.color = const Color.fromARGB(255, 59, 59, 59);
     var clipPath = clipper.getClip(size).shift(shadow.offset);
     canvas.drawPath(clipPath, paint);
   }
