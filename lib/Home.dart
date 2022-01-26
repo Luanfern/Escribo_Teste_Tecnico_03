@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starwars_escribo/TopicsNavigation.dart';
 import 'package:starwars_escribo/componentes/avatar.dart';
 import 'package:starwars_escribo/componentes/botaosite.dart';
 
@@ -29,7 +30,8 @@ class _HomeState extends State<Home> {
                   ),
                   Avatar(),
                 ],
-              )
+              ),
+              const TopicsNavigation(),
             ],
           ),
         ));
