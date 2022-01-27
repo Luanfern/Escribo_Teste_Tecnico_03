@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starwars_escribo/componentes/Lists/Componentes%20-%20Lista/Filme.dart';
+import 'package:starwars_escribo/componentes/Lists/Componentes%20-%20Lista/CardLists.dart';
 
 class ListFilmes extends StatefulWidget {
   const ListFilmes({Key? key}) : super(key: key);
@@ -14,7 +14,12 @@ class _ListFilmesState extends State<ListFilmes> {
     return ListView.builder(
         itemCount: 2,
         itemBuilder: (ctx, i) {
-          return const Filme();
+          return const CardLists(
+            corCard: Color.fromARGB(255, 201, 0, 0),
+            name: 'Nome',
+            type: 'Personagem',
+            fav: false,
+          );
         });
   }
 }
