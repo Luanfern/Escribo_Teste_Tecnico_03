@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fluttermoji/fluttermoji.dart';
 import 'package:provider/provider.dart';
-import 'package:starwars_escribo/AvatarTela.dart';
-import 'package:starwars_escribo/Body.dart';
+import 'package:starwars_escribo/Views/AvatarTela.dart';
+import 'package:starwars_escribo/Views/Body.dart';
 import 'package:starwars_escribo/Provider/Avatar.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
+import '../Views/AvatarTela.dart';
 
 class Avatar extends StatefulWidget {
   const Avatar({Key? key}) : super(key: key);

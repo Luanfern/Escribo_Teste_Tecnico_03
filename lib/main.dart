@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:starwars_escribo/Home.dart';
+import 'package:starwars_escribo/Views/Home.dart';
 import 'package:starwars_escribo/Provider/Pages.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
 

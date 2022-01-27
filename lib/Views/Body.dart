@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:starwars_escribo/ListsArea.dart';
-import 'package:starwars_escribo/TopicsNavigation.dart';
+import 'package:starwars_escribo/Views/ListsArea.dart';
+import 'package:starwars_escribo/Views/TopicsNavigation.dart';
 
 class CorpoApp extends StatefulWidget {
   const CorpoApp({Key? key}) : super(key: key);

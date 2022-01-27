@@ -38,17 +38,59 @@ class _CardListsState extends State<CardLists> {
         children: [
           Expanded(
             flex: 6,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(widget.type),
-                Container(
-                  color: Colors.white,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  height: 2,
-                ),
-                Text(widget.name),
-              ],
+            child: Container(
+              margin: const EdgeInsets.only(left: 8, top: 8, bottom: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(widget.type),
+                      Container(
+                        color: Colors.white,
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: 2,
+                      ),
+                      Text(
+                        widget.name,
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.width * 0.07,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 10, 10, 10),
+                            offset: Offset(0, 3),
+                            blurRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Saiba Mais',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Color.fromARGB(255, 226, 225, 225),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(

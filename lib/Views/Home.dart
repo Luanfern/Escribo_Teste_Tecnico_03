@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:starwars_escribo/Body.dart';
+import 'package:starwars_escribo/Views/Body.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
-import 'package:starwars_escribo/SiteOficial.dart';
+import 'package:starwars_escribo/Views/SiteOficial.dart';
 import 'package:starwars_escribo/componentes/avatar.dart';
 import 'package:starwars_escribo/componentes/botaosite.dart';
 

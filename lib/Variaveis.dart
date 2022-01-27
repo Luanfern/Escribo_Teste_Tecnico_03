@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starwars_escribo/Body.dart';
+import 'package:starwars_escribo/Views/Body.dart';
 import 'package:starwars_escribo/componentes/Lists/FilmesList.dart';
 
 Widget page = const ListFilmes();
