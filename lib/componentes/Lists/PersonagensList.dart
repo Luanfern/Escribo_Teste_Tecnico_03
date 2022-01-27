@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:starwars_escribo/Network/Models/Personagens/PersonagensPageModel.dart';
@@ -15,7 +17,7 @@ class ListPersonagens extends StatefulWidget {
 class _ListPersonagensState extends State<ListPersonagens> {
   ScrollController controller = ScrollController();
   late Future<PersonagemPage> futurePersonagem;
-  int pageloc = 1;
+  int pageloc = 2;
   bool buscandomais = false;
   bool pararbusca = false;
   int maxinfo = 0;
@@ -56,16 +58,16 @@ class _ListPersonagensState extends State<ListPersonagens> {
           perso.setPersoPage(proxPagina),
           print(
               'pagina a buscar: ${perso.getPersoPage} -- ${pageloc.toString()}'),
-          
-            if (perso.getListpersonagens.length == maxinfo) {
-              setState(() {
-                pararbusca = true;
-              }),
-            },
           setState(() {
             maxinfo = value.count;
             buscandomais = false;
           }),
+          if (perso.getListpersonagens.length >= maxinfo)
+            {
+              setState(() {
+                pararbusca = true;
+              }),
+            },
           print('------------------------------------'),
           print(maxinfo),
           print(perso.getListpersonagens.length),
@@ -77,8 +79,21 @@ class _ListPersonagensState extends State<ListPersonagens> {
   Widget build(BuildContext context) {
     final GerenciamentodePersonagens perso = Provider.of(context);
     return perso.getListpersonagens.length <= 1
-        ? const Center(
-            child: CircularProgressIndicator(),
+        ? Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/imgs/carregandogif.gif',
+                  scale: 5,
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Caregando...',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
           )
         : Stack(
             children: [
@@ -88,7 +103,7 @@ class _ListPersonagensState extends State<ListPersonagens> {
                   itemBuilder: (ctx, i) {
                     return CardLists(
                       corCard: const Color.fromARGB(255, 0, 150, 0),
-                      name: perso.getListpersonagens[i].name,
+                      name: utf8.decode(perso.getListpersonagens[i].name.codeUnits),
                       type: 'Personagem',
                       fav: false,
                     );

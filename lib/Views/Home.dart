@@ -24,16 +24,17 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     futurePersonagem = fetchPersonagens('');
+    final GerenciamentodePersonagens perso = Provider.of(context, listen: false);
+    futurePersonagem.then((value) => {
+      print('req'),
+      perso.setListpersonagens(value.results),
+      perso.setPersoPage(2),
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final GerenciamentodeTelas telas = Provider.of(context);
-    final GerenciamentodePersonagens perso = Provider.of(context);
-    futurePersonagem.then((value) => {   
-      perso.setListpersonagens(value.results),
-      perso.setPersoPage(2),
-    });
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 21, 21, 21),
       body: SafeArea(

@@ -108,13 +108,17 @@ class _CardListsState extends State<CardLists> {
                 ],
               ),
               child: GestureDetector(
-                child: const Center(
-                  child: Icon(
-                    //Icons.favorite_border_rounded,
+                child: Center(
+                  child: widget.fav == true ?
+                  const Icon(                    
                     Icons.favorite,
                     size: 40,
-                    //color: Colors.white,
                     color: Colors.red,
+                  ):
+                  const Icon(
+                    Icons.favorite_border_rounded,
+                    size: 40,
+                    color: Colors.white,
                   ),
                 ),
               ),
