@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starwars_escribo/Network/Models/Filmes/FilmesModel.dart';
 import 'package:starwars_escribo/Views/Body.dart';
 import 'package:starwars_escribo/componentes/Lists/FilmesList.dart';
 
@@ -19,3 +20,9 @@ Color corfundoavatar = Colors.white;
 //Pagina Personagem
 List<Personagem> personagens = [];
 int persopage = 1;
+int maxinfoperso = 0;
+
+//Pagina Filmes
+List<Filme> filmes = [];
+int filmepage = 1;
+int maxinfofilmes = 0;

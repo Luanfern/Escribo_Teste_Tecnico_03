@@ -27,7 +27,14 @@ class _ListPersonagensState extends State<ListPersonagens> {
     super.initState();
     final GerenciamentodePersonagens perso =
         Provider.of(context, listen: false);
-    pageloc = perso.getPersoPage;
+        maxinfo = perso.getmaxinfoperso;
+        pageloc = perso.getPersoPage;
+        if (perso.getListpersonagens.length >= maxinfo)
+            {
+              setState(() {
+                pararbusca = true;
+              });
+            }
     controller.addListener(() {
       if (pararbusca == false) {
         if (controller.position.pixels == controller.position.maxScrollExtent) {
@@ -59,7 +66,6 @@ class _ListPersonagensState extends State<ListPersonagens> {
           print(
               'pagina a buscar: ${perso.getPersoPage} -- ${pageloc.toString()}'),
           setState(() {
-            maxinfo = value.count;
             buscandomais = false;
           }),
           if (perso.getListpersonagens.length >= maxinfo)

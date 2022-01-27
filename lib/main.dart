@@ -6,6 +6,7 @@ import 'package:starwars_escribo/Provider/Pages.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
 
 import 'Provider/Avatar.dart';
+import 'Provider/Filme.dart';
 import 'Provider/Personagem.dart';
 
 void main() => runApp(
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (ctx) => GerenciamentodeTelas()),
           ChangeNotifierProvider(create: (ctx) => GerenciamentodeAvatar()),
           ChangeNotifierProvider(create: (ctx) => GerenciamentodePersonagens()),
+          ChangeNotifierProvider(create: (ctx) => GerenciamentodeFilmes()),
         ],
       child: MaterialApp(
         theme: ThemeData(

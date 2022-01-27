@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:starwars_escribo/Network/Models/Filmes/FilmesPageModel.dart';
 import 'package:starwars_escribo/Network/Models/Personagens/PersonagensPageModel.dart';
+import 'package:starwars_escribo/Network/Requests/FilmesRequest.dart';
 import 'package:starwars_escribo/Network/Requests/PersonagensRequest.dart';
 import 'package:starwars_escribo/Provider/Personagem.dart';
 import 'package:starwars_escribo/Views/Body.dart';
@@ -8,6 +10,8 @@ import 'package:starwars_escribo/Provider/Telas.dart';
 import 'package:starwars_escribo/Views/SiteOficial.dart';
 import 'package:starwars_escribo/componentes/avatar.dart';
 import 'package:starwars_escribo/componentes/botaosite.dart';
+
+import '../Provider/Filme.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -19,16 +23,26 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   late Future<PersonagemPage> futurePersonagem;
+  late Future<FilmesPage> futureFilmes;
 
   @override
   void initState() {
     super.initState();
+    futureFilmes = fetchFilmes('');
     futurePersonagem = fetchPersonagens('');
     final GerenciamentodePersonagens perso = Provider.of(context, listen: false);
+    final GerenciamentodeFilmes fil = Provider.of(context, listen: false);
     futurePersonagem.then((value) => {
       print('req'),
       perso.setListpersonagens(value.results),
       perso.setPersoPage(2),
+      perso.setmaxinfoperso(value.count),
+    });
+    futureFilmes.then((value) => {
+      print('req'),
+      fil.setListfilmes(value.results),
+      fil.setFilmePage(2),
+      fil.setmaxinfofilmes(value.count),
     });
   }
 

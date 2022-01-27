@@ -22,4 +22,13 @@ class GerenciamentodePersonagens with ChangeNotifier {
     notifyListeners();
   }
 
+   int get getmaxinfoperso{
+    return maxinfoperso;
+  }
+
+  void setmaxinfoperso(int value){
+    maxinfoperso = value;
+    notifyListeners();
+  }
+
 }
