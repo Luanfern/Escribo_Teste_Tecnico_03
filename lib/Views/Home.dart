@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:starwars_escribo/Network/Models/Personagens/PersonagensPageModel.dart';
+import 'package:starwars_escribo/Network/Requests/PersonagensRequest.dart';
+import 'package:starwars_escribo/Provider/Personagem.dart';
 import 'package:starwars_escribo/Views/Body.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
 import 'package:starwars_escribo/Views/SiteOficial.dart';
@@ -14,9 +17,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  late Future<PersonagemPage> futurePersonagem;
+
+  @override
+  void initState() {
+    super.initState();
+    futurePersonagem = fetchPersonagens('');
+  }
+
   @override
   Widget build(BuildContext context) {
     final GerenciamentodeTelas telas = Provider.of(context);
+    final GerenciamentodePersonagens perso = Provider.of(context);
+    futurePersonagem.then((value) => {   
+      perso.setListpersonagens(value.results),
+      perso.setPersoPage(2),
+    });
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 21, 21, 21),
       body: SafeArea(

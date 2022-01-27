@@ -15,7 +15,7 @@ class _ListFilmesState extends State<ListFilmes> {
         itemCount: 2,
         itemBuilder: (ctx, i) {
           return const CardLists(
-            corCard: Color.fromARGB(255, 201, 0, 0),
+            corCard: Color.fromARGB(255, 150, 0, 0),
             name: 'Nome',
             type: 'Personagem',
             fav: false,

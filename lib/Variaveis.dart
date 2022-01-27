@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:starwars_escribo/Views/Body.dart';
 import 'package:starwars_escribo/componentes/Lists/FilmesList.dart';
 
+import 'Network/Models/Personagens/PersonagensModel.dart';
+
 Widget page = const ListFilmes();
 
 Widget tela = const Expanded(
@@ -13,3 +15,7 @@ bool siteoficialaberto = false;
 bool editaravataraberto = false;
 
 Color corfundoavatar = Colors.white;
+
+//Pagina Personagem
+List<Personagem> personagens = [];
+int persopage = 1;
