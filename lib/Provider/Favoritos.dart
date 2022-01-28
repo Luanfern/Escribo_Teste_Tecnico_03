@@ -4,39 +4,30 @@ import '../Network/Models/Favoritos/Favoritos.dart';
 import '../Variaveis.dart';
 
 class GerenciamentodeFavoritos with ChangeNotifier {
-
   final BancoFavoritos = DatabaseFavoritos.instance;
 
-  List<Favorito> get getListfavoritos{
-    final res = Favoritosget();
-    List<Favorito> attlist = [];
-    res.forEach((row) => {
-      print(row),
-      attlist.add(
-        row
-      ),
-    });
+  List<Favorito> get getListfavoritos {
     return favoritos;
   }
 
-  void setaddListfavoritos(Favorito value){
+  void setaddListfavoritos(Favorito value) {
     favoritos.add(value);
     inserir(value);
     notifyListeners();
   }
 
-  void setremoveListfavoritos(Favorito value){
-    favoritos.remove(value);
-    deletar(value);
+  void setremoveListfavoritos(Favorito value) {
+    final rt = favoritos.removeWhere((element) => element.name == value.name);
+   deletar(value);
     notifyListeners();
   }
 
   //Funcoes - Banco de Dados
 
   void inserir(Favorito dados) async {
-     Map<String, dynamic> row = {
-      DatabaseFavoritos.columnName : dados.name,
-      DatabaseFavoritos.columnType  : dados.type
+    Map<String, dynamic> row = {
+      DatabaseFavoritos.columnName: dados.name,
+      DatabaseFavoritos.columnType: dados.type
     };
     await BancoFavoritos.inserirFavorito(row);
   }
@@ -45,9 +36,17 @@ class GerenciamentodeFavoritos with ChangeNotifier {
     await BancoFavoritos.deletarFavorito(dados.name!);
   }
 
-  Favoritosget() async {
+  Favoritosgetbd() async {
     final gt = await BancoFavoritos.getFavoritos();
-    return gt;
+    favoritos.clear();
+    gt.forEach((element) {
+      favoritos.add(
+        Favorito(
+          id: element[DatabaseFavoritos.columnId],
+          name: element[DatabaseFavoritos.columnName],
+          type: element[DatabaseFavoritos.columnType],
+        ),
+      );
+    });
   }
-
 }

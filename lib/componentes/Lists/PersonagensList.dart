@@ -7,6 +7,8 @@ import 'package:starwars_escribo/Network/Requests/PersonagensRequest.dart';
 import 'package:starwars_escribo/Provider/Personagem.dart';
 import 'package:starwars_escribo/componentes/Lists/Componentes%20-%20Lista/CardLists.dart';
 
+import '../../Provider/Favoritos.dart';
+
 class ListPersonagens extends StatefulWidget {
   const ListPersonagens({Key? key}) : super(key: key);
 
@@ -84,6 +86,7 @@ class _ListPersonagensState extends State<ListPersonagens> {
   @override
   Widget build(BuildContext context) {
     final GerenciamentodePersonagens perso = Provider.of(context);
+    final GerenciamentodeFavoritos favoritos =Provider.of(context);
     return perso.getListpersonagens.length <= 1
         ? Center(
             child: Column(
@@ -108,10 +111,10 @@ class _ListPersonagensState extends State<ListPersonagens> {
                   itemCount: perso.getListpersonagens.length,
                   itemBuilder: (ctx, i) {
                     return CardLists(
-                      corCard: const Color.fromARGB(255, 0, 150, 0),
+                      corCard: Color.fromARGB(255, 54, 54, 54),
                       name: utf8.decode(perso.getListpersonagens[i].name.codeUnits),
                       type: 'Personagem',
-                      fav: false,
+                      fav: favoritos.getListfavoritos.any((element) => perso.getListpersonagens[i].name == element.name),
                     );
                   }),
               Visibility(

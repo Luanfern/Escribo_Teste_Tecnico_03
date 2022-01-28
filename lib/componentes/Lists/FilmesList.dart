@@ -86,6 +86,7 @@ class _ListFilmesState extends State<ListFilmes> {
   @override
   Widget build(BuildContext context) {
     final GerenciamentodeFilmes filmes = Provider.of(context);
+    final GerenciamentodeFavoritos favoritos =Provider.of(context);
     return filmes.getListfilmes.length <= 1
         ? Center(
             child: Column(
@@ -110,10 +111,10 @@ class _ListFilmesState extends State<ListFilmes> {
                   itemCount: filmes.getListfilmes.length,
                   itemBuilder: (ctx, i) {
                     return CardLists(
-                      corCard: const Color.fromARGB(255, 150, 0, 0),
+                      corCard: const Color.fromARGB(255, 54, 54, 54),
                       name: utf8.decode(filmes.getListfilmes[i].title!.codeUnits),
                       type: 'Filme',
-                      fav: false,
+                      fav: favoritos.getListfavoritos.any((element) => filmes.getListfilmes[i].title! == element.name),
                     );
                   }),
               Visibility(

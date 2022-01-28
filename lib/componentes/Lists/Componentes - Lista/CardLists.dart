@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:starwars_escribo/Network/Models/Favoritos/Favoritos.dart';
 import 'package:starwars_escribo/Provider/Favoritos.dart';
 
 class CardLists extends StatefulWidget {
@@ -66,9 +67,7 @@ class _CardListsState extends State<CardLists> {
                     ],
                   ),
                   GestureDetector(
-                    onTap: () {
-                      
-                    },
+                    onTap: () {},
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.width * 0.07,
@@ -113,6 +112,18 @@ class _CardListsState extends State<CardLists> {
                 ],
               ),
               child: GestureDetector(
+                onTap: (){
+                      if (widget.fav == true) {
+                        print('remover!');
+                        favoritos.setremoveListfavoritos(Favorito(name: widget.name, type: widget.type));
+                      }else{
+                        print('adicionar!');
+                        favoritos.setaddListfavoritos(Favorito(name: widget.name, type: widget.type));
+                        setState(() {
+                          
+                        });
+                      }
+                },
                 child: Center(
                   child: widget.fav == true ?
                   const Icon(                    

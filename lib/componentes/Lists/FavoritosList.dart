@@ -11,16 +11,18 @@ class ListFavoritos extends StatefulWidget {
 }
 
 class _ListFavoritosState extends State<ListFavoritos> {
+
   @override
   Widget build(BuildContext context) {
     final GerenciamentodeFavoritos favoritos = Provider.of(context);
     return ListView.builder(
         itemCount: favoritos.getListfavoritos.length,
         itemBuilder: (ctx, i) {
-          return const CardLists(
-            corCard: Color.fromARGB(255, 54, 54, 54),
-            name: 'Nome',
-            type: 'Personagem',
+          return  CardLists(
+            corCard: favoritos.getListfavoritos[i].type! == 'Filme' ? const Color.fromARGB(255, 150, 0, 0): const Color.fromARGB(255, 0, 150, 0),
+            name: favoritos.getListfavoritos[i].name!,
+            type: favoritos.getListfavoritos[i].type!,
+            fav: true,
           );
         });
   }

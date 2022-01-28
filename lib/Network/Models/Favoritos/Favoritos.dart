@@ -1,11 +1,11 @@
 class Favorito {
-  String? id;
+  int? id;
   String? name;
   String? type;
 
   Favorito(
       {
-      required this.id,
+      this.id,
       required this.name,
       required this.type,
       });

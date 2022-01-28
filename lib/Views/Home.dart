@@ -11,6 +11,7 @@ import 'package:starwars_escribo/Views/SiteOficial.dart';
 import 'package:starwars_escribo/componentes/avatar.dart';
 import 'package:starwars_escribo/componentes/botaosite.dart';
 
+import '../Provider/Favoritos.dart';
 import '../Provider/Filme.dart';
 
 class Home extends StatefulWidget {
@@ -44,6 +45,8 @@ class _HomeState extends State<Home> {
       fil.setFilmePage(2),
       fil.setmaxinfofilmes(value.count),
     });
+    final GerenciamentodeFavoritos favoritos = Provider.of(context, listen: false);
+    favoritos.Favoritosgetbd();
   }
 
   @override
