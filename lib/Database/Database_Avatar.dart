@@ -3,7 +3,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
-class DatabaseHelper {  
+class DatabaseAvatar {  
   static const _databaseName = "AvatarDados.db";
   static const _databaseVersion = 1;
   static const table = 'Avatar';  
@@ -11,8 +11,8 @@ class DatabaseHelper {
   static const columnAvatar = 'avatar';
   static const columnBackground = 'background';
   
-  DatabaseHelper._privateConstructor();
-  static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
+  DatabaseAvatar._privateConstructor();
+  static final DatabaseAvatar instance = DatabaseAvatar._privateConstructor();
   
   static Database? _database;
 

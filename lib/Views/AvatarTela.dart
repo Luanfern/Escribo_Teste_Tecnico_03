@@ -13,6 +13,25 @@ class AvatarTela extends StatefulWidget {
 }
 
 class _AvatarTelaState extends State<AvatarTela> {
+
+  /* String decodeFluttermojifromString(String encodedData) {
+    var decodedData = utf8.decode(base64.decode(encodedData));
+    return decodedData;
+  }
+
+  Future<String> encodeMySVGtoString() async {
+    var svg = await rootBundle.loadString('assets/images/avatar.svg');
+    var encodedData = base64.encode(utf8.encode(svg));
+    return encodedData;
+  }
+
+  Future<Map> encodeMySVGtoMap(){
+    return encodeMySVGtoString().then((value) => {
+      'svg': value,
+      'svg_decoded': decodeFluttermojifromString(value)
+    });
+  } */
+  
   @override
   Widget build(BuildContext context) {
     final GerenciamentodeAvatar avatar = Provider.of(context);

@@ -3,7 +3,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
-class DatabaseHelper {  
+class DatabaseFavoritos {  
   static const _databaseName = "StarWarsDados.db";
   static const _databaseVersion = 1;
   static const table = 'Favoritos';  
@@ -11,8 +11,8 @@ class DatabaseHelper {
   static const columnName = 'name';
   static const columnType = 'type';
   
-  DatabaseHelper._privateConstructor();
-  static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
+  DatabaseFavoritos._privateConstructor();
+  static final DatabaseFavoritos instance = DatabaseFavoritos._privateConstructor();
   
   static Database? _database;
 
