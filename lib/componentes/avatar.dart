@@ -3,7 +3,6 @@ import 'package:fluttermoji/fluttermoji.dart';
 import 'package:provider/provider.dart';
 import 'package:starwars_escribo/Views/AvatarTela.dart';
 import 'package:starwars_escribo/Views/Body.dart';
-import 'package:starwars_escribo/Provider/Avatar.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
 import '../Views/AvatarTela.dart';
 
@@ -18,7 +17,6 @@ class _AvatarState extends State<Avatar> {
   @override
   Widget build(BuildContext context) {
     final GerenciamentodeTelas telas = Provider.of(context);
-    final GerenciamentodeAvatar avatar = Provider.of(context);
     return GestureDetector(
       onTap: () {
         if (telas.getavatar == false) {
@@ -39,7 +37,7 @@ class _AvatarState extends State<Avatar> {
         }
       },
       child: FluttermojiCircleAvatar(
-            backgroundColor: avatar.getcorfundoavatar,
+            backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
             radius: 40,
           ),
       );

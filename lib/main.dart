@@ -4,8 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:starwars_escribo/Views/Home.dart';
 import 'package:starwars_escribo/Provider/Pages.dart';
 import 'package:starwars_escribo/Provider/Telas.dart';
-
-import 'Provider/Avatar.dart';
 import 'Provider/Filme.dart';
 import 'Provider/Personagem.dart';
 
@@ -27,7 +25,6 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (ctx) => GerenciamentodePaginas()),
           ChangeNotifierProvider(create: (ctx) => GerenciamentodeTelas()),
-          ChangeNotifierProvider(create: (ctx) => GerenciamentodeAvatar()),
           ChangeNotifierProvider(create: (ctx) => GerenciamentodePersonagens()),
           ChangeNotifierProvider(create: (ctx) => GerenciamentodeFilmes()),
         ],
