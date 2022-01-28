@@ -3,6 +3,7 @@ import 'package:starwars_escribo/Network/Models/Filmes/FilmesModel.dart';
 import 'package:starwars_escribo/Views/Body.dart';
 import 'package:starwars_escribo/componentes/Lists/FilmesList.dart';
 
+import 'Network/Models/Favoritos/Favoritos.dart';
 import 'Network/Models/Personagens/PersonagensModel.dart';
 
 Widget page = const ListFilmes();
@@ -26,3 +27,6 @@ int maxinfoperso = 0;
 List<Filme> filmes = [];
 int filmepage = 1;
 int maxinfofilmes = 0;
+
+//Pagina Favoritos
+List<Favorito> favoritos = [];

@@ -6,6 +6,7 @@ import 'package:starwars_escribo/Network/Models/Filmes/FilmesPageModel.dart';
 import 'package:starwars_escribo/Network/Requests/FilmesRequest.dart';
 import 'package:starwars_escribo/componentes/Lists/Componentes%20-%20Lista/CardLists.dart';
 
+import '../../Provider/Favoritos.dart';
 import '../../Provider/Filme.dart';
 
 class ListFilmes extends StatefulWidget {

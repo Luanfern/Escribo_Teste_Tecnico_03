@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:starwars_escribo/Provider/Favoritos.dart';
 
 class CardLists extends StatefulWidget {
   final Color corCard;
@@ -20,6 +22,7 @@ class CardLists extends StatefulWidget {
 class _CardListsState extends State<CardLists> {
   @override
   Widget build(BuildContext context) {
+    final GerenciamentodeFavoritos favoritos =Provider.of(context);
     return Container(
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
@@ -63,7 +66,9 @@ class _CardListsState extends State<CardLists> {
                     ],
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      
+                    },
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.width * 0.07,

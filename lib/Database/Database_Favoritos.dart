@@ -34,36 +34,26 @@ class DatabaseFavoritos {
   Future _onCreate(Database db, int version) async {
     await db.execute('''
           CREATE TABLE $table (
-            $columnId INTEGER PRIMARY KEY,
+            $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
             $columnName TEXT NOT NULL,
             $columnType TEXT NOT NULL
           )
           ''');
   }  
   
-  Future<int> insert(Map<String, dynamic> row) async {
+  Future<int> inserirFavorito(Map<String, dynamic> row) async {
     Database? db = await instance.database;
     return await db!.insert(table, row);
   }
   
-  Future<List<Map<String, dynamic>>> queryAllRows() async {
+  Future<int> deletarFavorito(String name) async {
+    Database? db = await instance.database;
+    return await db!.delete(table, where: '$columnName = ?', whereArgs: [name]);
+  }
+
+    Future<List<Map<String, dynamic>>> getFavoritos() async {
     Database? db = await instance.database;
     return await db!.query(table);
   }
-  
-  Future<int?> queryRowCount() async {
-    Database? db = await instance.database;
-    return Sqflite.firstIntValue(await db!.rawQuery('SELECT COUNT(*) FROM $table'));
-  }
-  
-  Future<int> update(Map<String, dynamic> row) async {
-    Database? db = await instance.database;
-    int id = row[columnId];
-    return await db!.update(table, row, where: '$columnId = ?', whereArgs: [id]);
-  }
-  
-  Future<int> delete(int id) async {
-    Database? db = await instance.database;
-    return await db!.delete(table, where: '$columnId = ?', whereArgs: [id]);
-  }
+
 }
