@@ -46,9 +46,8 @@ class _CardListsState extends State<CardLists> {
               margin: const EdgeInsets.only(left: 8, top: 8, bottom: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,33 +64,6 @@ class _CardListsState extends State<CardLists> {
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ],
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.25,
-                      height: MediaQuery.of(context).size.width * 0.07,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color.fromARGB(255, 10, 10, 10),
-                            offset: Offset(0, 3),
-                            blurRadius: 2,
-                          ),
-                        ],
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Saiba Mais',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Color.fromARGB(255, 226, 225, 225),
-                          ),
-                        ),
-                      ),
-                    ),
                   ),
                 ],
               ),
