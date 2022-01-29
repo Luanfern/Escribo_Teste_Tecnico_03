@@ -16,12 +16,12 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 "# Escribo_Teste_Tecnico_03" 
 
-Este projeto foi realizado como um teste para a Empresa Escribo.
-Consiste em requisitar informações de uma API e mostrá-las ao usuário.
-Nele há uma biblioteca chamada Fluttermoji, onde podemos personalizar um avatar de uma forma bem divertida.
-Tabém é utilizada a biblioteca InAppWebView para carregar a tela de um site no app, semelhante ao <frame> do html.
-Armazenamos os personagens e filmes favoritos do usuário pela biblioteca SQFLite, um banco de dados local.
-O Avatar também é armazenado, porém com o uso do shared_preferences.
+<p>Este projeto foi realizado como um teste para a Empresa Escribo.</p>
+<p>Consiste em requisitar informações de uma API e mostrá-las ao usuário.</p>
+<p>Nele há uma biblioteca chamada Fluttermoji, onde podemos personalizar um avatar de uma forma bem divertida.</p>
+<p>Tabém é utilizada a biblioteca InAppWebView para carregar a tela de um site no app, semelhante ao <frame> do html.</p>
+<p>Armazenamos os personagens e filmes favoritos do usuário pela biblioteca SQFLite, um banco de dados local.</p>
+<p>O Avatar também é armazenado, porém com o uso do shared_preferences.</p>
 
 
 # Como Rodar o Projeto
