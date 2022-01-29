@@ -17,3 +17,20 @@ samples, guidance on mobile development, and a full API reference.
 "# Escribo_Teste_Tecnico_03" 
 
 # Como Rodar o Projeto
+
+- Para testar o projeto, baixe o APK deste repositório: 
+- Link para baixar o APK: https://luanfern.mxw.com.br/Escribo_SnakesandLadders.zip
+- O código completo do game está neste Repositório.
+    <p>1 Abra o seu CMD</p>
+    <p>2. Crie um projeto flutter com: flutter create ['nome do projeto']</p>
+    <p>3. passe as informações deste repositório para o seu projeto</p>
+    <p>4. Os principais arquivos a serem passados são a pasta "lib", os assets e as informações adicionais do pubspec.yaml</p>
+    <p>5. Lembre-se de adicionar a permissão de internet https://developer.android.com/training/basics/network-ops/connecting no arquivo AndroidManifest.xml que se encontra dentro de android/app/src/main</p>
+
+- Estas últimas etapas são muito importântes para o funcionamento das animações pela package ['Lottie'] = https://pub.dev/packages/lottie
+    
+    <p>6. Para gerar o apk, rode o comando no CMD: flutter build apk</p>
+    <p>7. O apk se encontrará na pasta snakesandladders_escribo\build\app\outputs\flutter-apk\ ['APK aqui']</p>
+
+
+# Agradeço pela Oportunidade.
